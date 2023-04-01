@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Comment Compass</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Comment Compass</h1>
+    <h2>This comment sentiment tool knows the score!</h2>
+    <form method="post">
+        <label for="video_url">YouTube Video URL:</label>
+        <input type="text" id="video_url" name="video_url" required>
+        <button type="submit" class="analyze-button">Analyze Comments</button>
+    </form>
+
+    <div class="stats">
+        <h2>Summary Statistics</h2>
+        <p>Total comments: {{ stats.total }}</p>
+        <p>Positive comments: {{ stats.positive }} ({{ stats.positive_percentage }}%)</p>
+        <p>Negative comments: {{ stats.negative }} ({{ stats.negative_percentage }}%)</p>
+        <label for="slider">Sentiment:</label>
+        <input type="range" min="0" max="1" step="0.01" value="{{ stats.positive_percentage / 100 }}" id="slider" disabled>
+        <p>Sentiment Score: <span id="weight">{{ stats.score / 100 }}</span></p>
+    </div>
+
+    <div class="scrollable">
+        {% for comment, sentiment in comments %}
+            <p><b>{{ sentiment.label }}</b> <i>{{ sentiment.score}}</i> : {{ comment }}</p>
+            <hr>
+        {% endfor %}
+    </div>
+
+    <script>
+        const analyzeButton = document.querySelector(".analyze-button");
+
+        analyzeButton.addEventListener("click", function () {
+            alert("Please be patient while we analyze the comments...");
+        });
+    </script>
+
+</body>
+</html>

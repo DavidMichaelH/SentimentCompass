@@ -1,0 +1,19 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyc
+
+# Log files
+*.log
+
+# Environment files
+.env
+!.gitignore
+
+# App Engine related
+app/app.yaml
+
+app/.gcloudignore
+app/.dockerignore.txt
+app/*.log

@@ -1,0 +1,119 @@
+/* General styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f2f2f2;
+  background: linear-gradient(to right, rgb(255, 213, 213), rgb(255, 213, 252), rgb(213, 213, 255), rgb(213, 255, 229));
+  background-size: 400% 400%;
+  animation: gradient 20s ease infinite;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Header styles */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+/* Form styles */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+form label {
+  font-size: 18px;
+}
+
+form input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  margin: 0 10px;
+  flex: 1;
+  max-width: 400px;
+}
+
+form button[type="submit"] {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+/* Summary statistics styles */
+.stats {
+  margin-bottom: 20px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* Comment section styles */
+.scrollable {
+  margin-top: 20px;
+  border: 1px solid #b8b8b8;
+  background-color: #f3f3f7;
+  border-radius: 5px;
+  padding: 10px;
+  width: 80%;
+  height: 60%;
+  margin: 0 auto;
+  max-width: 1600px;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.scrollable p {
+  margin: 0;
+  padding: 5px 0;
+}
+
+/* Slider styles */
+input[type=range] {
+  -webkit-appearance: none;
+  width: 80%;
+  height: 50px;
+  background: linear-gradient(to right, #ff5f5f 0%, #fff 50%, #00c853 100%);
+  border-radius: 10px;
+  outline: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 30px;
+  height: 70px;
+  background-color: #fff;
+  border: 3px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  position: relative;
+  cursor: default;
+}
+
+
+
